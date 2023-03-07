@@ -24,11 +24,29 @@ const Home = () => {
                            elit. Qui magni delectus tenetur autem, sint
                            veritatis!
                         </p>
-                        <div className="hero__btns">
-                           <button className="order__btn">
-                              Order Now!<i class="ri-arrow-right-s-line"></i>
+                        <div className="hero__btns d-flex align-items-center gap-5 mt-4">
+                           <button className="order__btn d-flex align-items-center justify-content-between">
+                              Order now <i class="ri-arrow-right-s-line"></i>
                            </button>
-                           <button><Link>See all foods</Link></button>
+
+                           <button className="all__foods-btn">
+                              <Link to="/foods">See all foods</Link>
+                           </button>
+                        </div>
+
+                        <div className='hero__service  d-flex align-items-center gap-5 mt-5'>
+                           <p className='d-flex align-item=center gap-2'>
+                              <span className='shipping__icon'>
+                                 <i class="ri-car-line"></i>
+                              </span>
+                              No shipping charge
+                              </p>
+                           <p className='d-flex align-item=center gap-2'>
+                              <span className='shipping__icon'>
+                                 <i class="ri-shield-check-line"></i>
+                              </span>
+                              Check out
+                           </p>
                         </div>
                      </div>
                   </Col>
