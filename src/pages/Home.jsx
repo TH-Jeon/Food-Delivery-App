@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Helmet from '../components/Helmet/Helmet.js';
 import Category from '../components/UI/category/category.jsx';
 
@@ -13,6 +13,13 @@ import heroImg from '../assets/images/hero.png';
 import featureImg01 from '../assets/images/service-01.png';
 import featureImg02 from '../assets/images/service-02.png';
 import featureImg03 from '../assets/images/service-03.png';
+
+import products from '../assets/fake-data/products.js';
+
+import foodCategoryImg01 from '../assets/images/hamburger.png';
+import foodCategoryImg02 from '../assets/images/pizza.png';
+import foodCategoryImg03 from '../assets/images/bread.png';
+import ProductCard from '../components/UI/product-card/ProductCard.jsx';
 
 const featureData = [
    {
@@ -33,6 +40,36 @@ const featureData = [
 ];
 
 const Home = () => {
+   const [category, setCategory] = useState('ALL');
+   const [allProducts, setAllProducts] = useState(products);
+
+   useEffect(() => {
+      if (category === 'ALL') {
+         setAllProducts(products);
+      }
+      if (category === 'BURGER') {
+         const filteredProducts = products.filter(
+            (item) => item.category === 'Burger'
+         );
+
+         setAllProducts(filteredProducts);
+      }
+      if (category === 'PIZZA') {
+         const filteredProducts = products.filter(
+            (item) => item.category === 'Pizza'
+         );
+
+         setAllProducts(filteredProducts);
+      }
+      if (category === 'BREAD') {
+         const filteredProducts = products.filter(
+            (item) => item.category === 'Bread'
+         );
+
+         setAllProducts(filteredProducts);
+      }
+   }, [category]);
+
    return (
       <Helmet title="Home">
          <section>
@@ -108,18 +145,64 @@ const Home = () => {
                      </p>
                   </Col>
 
-                  {
-                    featureData.map((item,index)=>(
-                      <Col lg="4" md="4" key={index}>
-                      <div className="feature__item">
-                          <img src={item.imgUrl} alt="feature-img" />
-                          <h5>{item.title}</h5>
-                          <p>{item.desc}</p>
-                      </div>
-                   </Col>
-                    ))
-                  }
+                  {featureData.map((item, index) => (
+                     <Col lg="4" md="4" key={index} className="mt-5">
+                        <div className="feature__item text-center p-3">
+                           <img
+                              src={item.imgUrl}
+                              alt="feature-img"
+                              className="w-25 mb-3"
+                           />
+                           <h5 className="fw-bold mb-3">{item.title}</h5>
+                           <p>{item.desc}</p>
+                        </div>
+                     </Col>
+                  ))}
+               </Row>
+            </Container>
+         </section>
 
+         <section>
+            <Container>
+               <Row>
+                  <Col lg="12" className="text-center">
+                     <h2>Popular Foods</h2>
+                  </Col>
+
+                  <Col lg="12">
+                     <div className="food__category d-flex align-items-center justify-content-center gap-5">
+                        <button
+                           className="all__btn foodBtnActive"
+                           onClick={() => setCategory('ALL')}
+                        >
+                           All
+                        </button>
+                        <button
+                           className="d-flex align-items-center gap-2"
+                           onClick={() => setCategory('BURGER')}
+                        >
+                           <img src={foodCategoryImg01} alt="" /> Burger
+                        </button>
+                        <button
+                           className="d-flex align-items-center gap-2"
+                           onClick={() => setCategory('PIZZA')}
+                        >
+                           <img src={foodCategoryImg02} alt="" /> Pizza
+                        </button>
+                        <button
+                           className="d-flex align-items-center gap-2"
+                           onClick={() => setCategory('BREAD')}
+                        >
+                           <img src={foodCategoryImg03} alt="" /> Bread
+                        </button>
+                     </div>
+                  </Col>
+
+                  {allProducts.map((item) => (
+                     <Col lg="3" md="4" key={item.id} className="mt-5">
+                        <ProductCard item={item} />
+                     </Col>
+                  ))}
                </Row>
             </Container>
          </section>
