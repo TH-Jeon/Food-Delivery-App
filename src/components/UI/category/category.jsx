@@ -28,15 +28,15 @@ const categoryData = [
    },
 ];
 
-const category = () => {
+const Category = () => {
    return (
       <Container>
          <Row>
             {categoryData.map((item, index) => (
-               <Col lg="3" md="4">
+               <Col lg="3" md="4" sm="6" xs="6" className='mb-4' key={index}>
                 <div className='category__item d-flex align-items-center gap-3'>
                     <div className="category__img">
-                        <img src={item.imgUrl} alt="category__url" />
+                        <img src={item.imgUrl} alt="category__item" />
                     </div>
                     <h6>{item.display}</h6>
                 </div>
@@ -47,4 +47,4 @@ const category = () => {
    );
 };
 
-export default category;
+export default Category;
