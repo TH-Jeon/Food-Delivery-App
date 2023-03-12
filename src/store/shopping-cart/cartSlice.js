@@ -6,7 +6,7 @@ const initialState = {
    totalAmount: 0,
 };
 
-const cartSlice = {
+const cartSlice = createSlice({
    name: 'cart',
    initialState: initialState,
 
@@ -39,7 +39,7 @@ const cartSlice = {
          );
       },
    },
-};
+});
 
 export const cartActions = cartSlice.actions;
 export default cartSlice;
