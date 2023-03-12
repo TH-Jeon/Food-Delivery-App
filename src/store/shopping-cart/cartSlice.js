@@ -20,7 +20,7 @@ const cartSlice = createSlice({
          state.totalQuantity++;
 
          if (!existingItem) {
-            state.cartIteams.push({
+            state.cartItems.push({
                id: newItem.id,
                title: newItem.title,
                image01: newItem.image01,
@@ -34,7 +34,7 @@ const cartSlice = createSlice({
                Number(existingItem.totalPrice) + Number(newItem.price);
          }
 
-         state.totalAmount = state.cartIteams.reduce(
+         state.totalAmount = state.cartItems.reduce(
             (total, item) => total + Number(item.price) * Number(item.quantity)
          );
       },
