@@ -41,7 +41,7 @@ const Footer = () => {
             <h5 className="footer__title">Contact</h5>
             <ListGroup className="deliver__time-list">
               <ListGroupItem className=" delivery__time-item border-0 ps-0">
-                <p>Location: ZindaBazar, Sylhet-3100, Bangladesh</p>
+                <p>Location: Toronto</p>
               </ListGroupItem>
               <ListGroupItem className=" delivery__time-item border-0 ps-0">
                 <span>Phone: 01712345678</span>
@@ -68,7 +68,7 @@ const Footer = () => {
         <Row className="mt-5">
           <Col lg="6" md="6">
             <p className="copyright__text">
-              Copyright - 2022, website made by Muhibur Rahman. All Rights
+              Copyright - 2023, website made by HS&TH. All Rights
               Reserved.
             </p>
           </Col>
@@ -77,20 +77,20 @@ const Footer = () => {
               <p className="m-0">Follow: </p>
               <span>
                 {" "}
-                <Link to="https://www.facebook.com/muhib160">
+                <Link to="https://www.facebook.com">
                   <i class="ri-facebook-line"></i>
                 </Link>{" "}
               </span>
 
               <span>
-                <Link to="https://github.com/muhib160">
+                <Link to="https://github.com/">
                   <i class="ri-github-line"></i>
                 </Link>
               </span>
 
               <span>
                 {" "}
-                <Link to=" https://www.youtube.com/c/MuhibsTechDiary">
+                <Link to=" https://www.youtube.com">
                   <i class="ri-youtube-line"></i>
                 </Link>{" "}
               </span>
