@@ -11,11 +11,9 @@
 }
 
 @media only screen and (max-width: 768px) {
-
   .category__item {
     padding: 20px 15px;
   }
-
   .category__img img {
     width: 40px;
     height: 40px;

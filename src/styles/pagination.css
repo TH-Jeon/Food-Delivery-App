@@ -8,9 +8,9 @@
     column-gap: 0.5rem;
     list-style: none;
     margin-top: 30px;
-}
-
-.paginationBttns a {
+  }
+  
+  .paginationBttns a {
     padding: 5px 13px;
     background: #212245;
     color: #fff !important;
@@ -20,8 +20,8 @@
     justify-content: center;
     cursor: pointer;
     margin: 5px;
-}
-
-.paginationBttns a:hover {
+  }
+  
+  .paginationBttns a:hover {
     background: #df2020;
-}
+  }
